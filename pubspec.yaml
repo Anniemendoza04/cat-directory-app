@@ -30,11 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  [cite_start]flutter_bloc: ^8.1.0        # Gestor de estados [cite: 28, 52]
-  [cite_start]dio: ^5.0.0                 # Consumo de API [cite: 67]
+  flutter_bloc: ^8.1.0        # Gestor de estados [cite: 28, 52]
+  dio: ^5.0.0                 # Consumo de API [cite: 67]
   get_it: ^7.2.0              #  Inyección de dependencias
-  [cite_start]freezed_annotation: ^2.4.0  # Plus: Modelos inmutables 
-  [cite_start]shimmer: ^3.0.0             # Plus: Skeleton loading [cite: 31, 74]
+  freezed_annotation: ^2.4.0  # Plus: Modelos inmutables 
+  shimmer: ^3.0.0             # Plus: Skeleton loading [cite: 31, 74]
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,10 +42,10 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
-  sdk: flutter
+    sdk: flutter
   build_runner: ^2.4.0
   freezed: ^2.4.0
-  [cite_start]json_serializable: ^6.7.0
+  json_serializable: ^6.7.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
