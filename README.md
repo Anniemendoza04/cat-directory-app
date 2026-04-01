@@ -1,16 +1,30 @@
 # cat_directory_app
 
-A new Flutter project.
+App desarrollada en Flutter que permite explorar diversas razas de gatos, obtener detalles técnicos de cada una y disfrutar de curiosidades aleatorias.
 
-## Getting Started
+## Características
+- Listado de razas: visualización de razas y datos obtenidos del api de CatFact.
+- Detalle de Raza: Información específica sobre origen, pelaje y país.
+- Imágenes Inteligentes: Implementación de una estrategia de fallback que busca fotos reales en TheCatAPI y utiliza Cataas como respaldo.
+- Cat Facts: Sección de "Random Facts" para los amantes de los felinos.
+- Navegación Fluida: Uso de animaciones Hero para transiciones de imágenes.
 
+## Tecnologías
+Framework: Flutter
+Gestión de Estado: Flutter BLoC
+Inyección de Dependencias: Get It
+Cliente HTTP: Dio
+Arquitectura: Clean Architecture (domain, data, presentation)
+
+## Instalación y Uso
+1. clonar repositorio:
+   git clone https://github.com/tu-usuario/cat_directory_app.git
+2. Instalar dependencias:
+   flutter pub get
+3. correr para web:
+   flutter run -d chrome --web-browser-flag "--disable-web-security"
+
+## Autor: Annabella Mendoza
+Estudiante de Ingeniería de Sistemas - Unimet
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
