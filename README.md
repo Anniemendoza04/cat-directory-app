@@ -30,14 +30,20 @@ Arquitectura: Clean Architecture (domain, data, presentation)
   <img src="assets/images/landing page (1).png" width="250" alt="Landing Page">
 </p>
 
-| Listado de Razas | Búsqueda y Detalle |
-| :---: | :---: |
-| <img src="assets/images/home page.png" width="300" alt="Home Page"> | <img src="assets/images/busqueda.png" width="300" alt="Búsqueda de Razas"> |
+<p align="center">
+  <img src="assets/images/random cat fact.png" width="400" alt="Random Cat Fact Showcase">
+</p>
+<p align="center">
+  <img src="assets/images/home page.png" width="300" alt="Home Page">
+</p>
+
+| Búsqueda y Detalle |
+| :---: |
+| <img src="assets/images/busqueda.png" width="300" alt="Búsqueda de Razas"> |
 
 > *Arriba: Sección de "Random Cat Facts" implementada con éxito.*
 
 ## Autor: Annabella Mendoza
 Estudiante de Ingeniería de Sistemas - Unimet
-This project is a starting point for a Flutter application.
 *Desarrollado con ❤️ para Nextep.*
 
