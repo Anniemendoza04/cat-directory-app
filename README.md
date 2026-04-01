@@ -10,11 +10,11 @@ App desarrollada en Flutter que permite explorar diversas razas de gatos, obtene
 - Navegación Fluida: Uso de animaciones Hero para transiciones de imágenes.
 
 ## Tecnologías
-Framework: Flutter
-Gestión de Estado: Flutter BLoC
-Inyección de Dependencias: Get It
-Cliente HTTP: Dio
-Arquitectura: Clean Architecture (domain, data, presentation)
+- Framework: Flutter
+- Gestión de Estado: Flutter BLoC
+- Inyección de Dependencias: Get It
+- Cliente HTTP: Dio
+- Arquitectura: Clean Architecture (domain, data, presentation)
 
 ## Instalación y Uso
 1. clonar repositorio:
