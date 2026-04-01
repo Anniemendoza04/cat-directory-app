@@ -3,8 +3,9 @@ import '../entities/cat_fact.dart';
 
 abstract class BreedRepository {
   // para obtener la lista de razas de gatos y soporte de paginación
-  Future<List<Breed>> getBreeds();
+  Future<List<Breed>> getBreeds({int page = 1});
 
   // para obtener facts de gatos
   Future<CatFact> getRandomCatFact();
+  Future<String?> getBreedImageUrl(String breedName);
 }

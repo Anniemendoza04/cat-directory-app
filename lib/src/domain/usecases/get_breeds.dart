@@ -6,7 +6,7 @@ class GetBreeds {
 
   GetBreeds(this.repository);
 
-  Future<List<Breed>> call() async {
-    return await repository.getBreeds();
+  Future<List<Breed>> call({int page = 1}) async {
+    return await repository.getBreeds(page: page);
   }
 }

@@ -11,17 +11,41 @@ class BreedRepositoryImpl implements BreedRepository {
   BreedRepositoryImpl(this.dio);
 
   @override
-  Future<List<Breed>> getBreeds() async {
+  Future<List<Breed>> getBreeds({int page = 1}) async {
     try {
-      final response = await dio.get('https://catfact.ninja/breeds');
+      final response = await dio.get('https://catfact.ninja/breeds?page=$page');
 
-      // La API devuelve los datos dentro de una lista 'data'
-      final List<dynamic> data = response.data['data'];
+      if (response.statusCode == 200) {
+        // OJO: catfact.ninja devuelve un objeto con una lista dentro de 'data'
+        final List data = response.data['data'];
+        return data.map((json) => BreedModel.fromJson(json)).toList();
+      } else {
+        throw Exception('Failed to load breeds');
+      }
+    } catch (e) {
+      throw Exception('Error: $e');
+    }
+  }
 
-      return data.map((json) => BreedModel.fromJson(json)).toList();
-    } on DioException catch (e) {
-      // se manejan fallos de red:
-      throw Exception('Error al cargar razas: ${e.message}');
+  @override
+  Future<String?> getBreedImageUrl(String breedName) async {
+    try {
+      // Buscamos la raza en TheCatAPI
+      final response = await dio.get(
+        'https://api.thecatapi.com/v1/breeds/search',
+        queryParameters: {'q': breedName},
+      );
+
+      if (response.statusCode == 200 && (response.data as List).isNotEmpty) {
+        final breedData = response.data[0];
+        final imageId = breedData['reference_image_id'];
+        if (imageId != null) {
+          return 'https://cdn2.thecatapi.com/images/$imageId.jpg';
+        }
+      }
+      return null; // Si no hay imagen, devuelve null para activar el fallback
+    } catch (_) {
+      return null; // ante cualquier error, fallback
     }
   }
 
@@ -32,7 +56,7 @@ class BreedRepositoryImpl implements BreedRepository {
       return CatFactModel.fromJson(response.data) as CatFact;
     } on DioException catch (e) {
       // se manejan fallos de red:
-      throw Exception('Error al cargar el dato curioso: ${e.message}');
+      throw Exception('Failed to load cat fact: ${e.message}');
     }
   }
 }
